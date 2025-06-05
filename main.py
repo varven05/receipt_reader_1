@@ -29,7 +29,7 @@ async def extract_receipt(file: UploadFile = File(...)):
         total = max((float(p.replace(',', '')) for p in prices), default=None)
         total = f"{total:.2f}" if total is not None else "Unknown"
 
-        # Try to extract a date using only one pattern and format: MM/DD/YYYY
+        # Try to extract a date MM/DD/YYYY
         date = "Unknown"
         pattern = r'\d{2}/\d{2}/\d{4}'  # matches dates like 09/22/2024
         match = re.search(pattern, text)
